@@ -7,6 +7,7 @@ interface RadioProps {
   text?: string
   name: string
   value?: string
+  InputClassName?: string
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void
 }
 
@@ -18,10 +19,12 @@ const Radio: React.FC<RadioProps> = ({
   name,
   text,
   value,
+  InputClassName,
 }): JSX.Element => {
   const radioButton = (
     <input
       type="radio"
+      className={InputClassName}
       name={name}
       id={name}
       value={value}
